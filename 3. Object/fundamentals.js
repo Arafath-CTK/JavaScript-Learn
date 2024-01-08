@@ -151,4 +151,47 @@ function summing(obj) {
   return sum;
 }
 
-console.log(summing(orders));
+// console.log(summing(orders));
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const myObject = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+};
+
+for (const key in myObject) {
+  // basic syntax for "forIn"
+  // console.log(key, myObject[key]);
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let counting = function (myObject) {
+  let count = 0;
+  for (const key in myObject) {
+    if (key) {
+      count++;
+    }
+  }
+  return count;
+};
+
+// console.log(counting(myObject));
+
+let maxValue = function (obj) {
+  let maxKey = null;
+  let maxValue = -Infinity;
+
+  for (const key in obj) {
+    if (typeof obj[key] === "number" && obj[key] > maxValue) {
+      maxKey = key;
+      maxValue = obj[key];
+    }
+  }
+  return maxKey;
+};
+
+console.log(maxValue(myObject));
