@@ -245,4 +245,121 @@ function countProps(object) {
   return count;
 }
 
-console.log(countProps(nestedObject));
+// console.log(countProps(nestedObject));
+
+// Find the average value of all numeric properties in an object (including nested ones).
+
+var sampleObject = {
+  name: "John Doe",
+  age: 25,
+  grades: {
+    math: 90,
+    english: 85,
+    science: 92,
+  },
+  attendance: {
+    lectures: 20,
+    labs: 18,
+  },
+  scores: [95, 88, 75],
+  isActive: true,
+};
+
+function avgNumericValues(object) {
+  var sum = 0;
+  for (const key in object) {
+    if (typeof object[key] === "number") {
+      sum += object[key];
+    } else if (typeof object[key] === "object" && object[key] !== null) {
+      sum += avgNumericValues(object[key]);
+    }
+  }
+  return sum;
+}
+
+// console.log(avgNumericValues(sampleObject));
+
+// Create a new object containing only the even-numbered properties of another object.
+
+var sampleObject = {
+  name: "John Doe",
+  age: 25,
+  grades: {
+    math: 90,
+    english: 85,
+    science: 92,
+  },
+  attendance: {
+    lectures: 20,
+    labs: 18,
+  },
+  scores: [95, 88, 75],
+  isActive: true,
+};
+
+function evenProperties(object) {
+  var newObject = {};
+  var isEven = true;
+  for (const key in object) {
+    isEven = !isEven;
+    if (isEven) {
+      newObject[key] = object[key];
+    }
+  }
+  return newObject;
+}
+
+// console.log(evenProperties(sampleObject));
+
+// Modify all string values in an object to uppercase.
+
+var sampleObject = {
+  name: "John Doe",
+  age: 25,
+  city: "New York",
+  details: {
+    occupation: "Software Engineer",
+    hobby: "Reading",
+  },
+  isActive: true,
+};
+
+function upperCasing(object) {
+  for (const key in object) {
+    if (typeof object[key] === "string") {
+      object[key] = object[key].toUpperCase();
+    } else if (typeof object[key] === "object" && object[key] !== null) {
+      object[key] = upperCasing(object[key]);
+    }
+  }
+  return object;
+}
+
+// console.log(upperCasing(sampleObject));
+
+// Find the deepest nested property in an object.
+
+var deepObject = {
+  level1: {
+    property1: "Value 1",
+    property2: {
+      level2: {
+        property3: "Value 2",
+        property4: {
+          level3: {
+            property5: "Deep Value",
+          },
+        },
+      },
+    },
+  },
+};
+
+function findDeep(params) {
+  
+  for (const key in object) {
+    if (condition) {
+      
+    }
+  }
+}
