@@ -48,7 +48,7 @@ let book = {
 
 // console.log(book.readingSpeed(5));
 
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Write a function that checks if a given property exists in an object.
 
@@ -155,7 +155,7 @@ function summing(obj) {
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const myObject = {
+var myObject = {
   a: 1,
   b: 2,
   c: 3,
@@ -194,4 +194,55 @@ let maxValue = function (obj) {
   return maxKey;
 };
 
-console.log(maxValue(myObject));
+// console.log(maxValue(myObject));
+
+// Print all key-value pairs of an object in alphabetical order.
+var myObject = {
+  banana: 3,
+  apple: 5,
+  orange: 2,
+  grape: 7,
+};
+
+function alphabeticalObject(obj) {
+  var keys = Object.keys(obj).sort();
+  keys.forEach((elem) => {
+    console.log(elem);
+  });
+}
+
+// alphabeticalObject(myObject)
+
+// Count the total number of properties in an object (including nested ones).
+
+var nestedObject = {
+  name: "John Doe",
+  age: 30,
+  address: {
+    street: "123 Main Street",
+    city: "Anytown",
+    country: "USA",
+  },
+  contact: {
+    email: "john.doe@example.com",
+    phone: {
+      home: "555-1234",
+      mobile: "555-5678",
+    },
+  },
+};
+
+function countProps(object) {
+  let count = 0;
+  for (const key in object) {
+    if (key) {
+      count++;
+      if (typeof object[key] === "object" && object[key] !== null) {
+        count += countProps(object[key]);
+      }
+    }
+  }
+  return count;
+}
+
+console.log(countProps(nestedObject));
