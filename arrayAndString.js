@@ -150,3 +150,14 @@ array = [
 ];
 var filtered = array.filter((currentValue) => currentValue.age > 18);
 // console.log(mapped);
+
+// Flatten the nested array [1, [2, 3], [4, 5, [6]], 7] into a single-dimensional array.\
+arrayModel = [1, [2, 3], [4, 5, [6]], 7];
+function flattenArray(array) {
+  return array.map((currentValue) => {
+    return Array.isArray(currentValue)
+      ? flattenArray(currentValue)
+      : currentValue;
+  });
+}
+console.log(flattenArray(arrayModel));
