@@ -77,6 +77,76 @@ function sum(a, b, c) {
 // sum(1,2,3)
 
 array = [1, 2, 3, 4];
-let mapped = array.map((currentValue, index, array) => currentValue * index)
-console.log(mapped);
+var mapped = array.map((currentValue, index, array) => currentValue * index);
+// console.log(mapped);
 
+// Use map() to double each element in an array of numbers.
+array = [1, 2, 3, 4];
+mapped = array.map((currentValue) => currentValue * 2);
+// console.log(mapped);
+
+// Convert all items in a string array to lowercase.
+array = ["HELLO", "WORLD", "HOW", "ARE", "YOU"];
+mapped = array.map((currentValue) => currentValue.toLowerCase());
+// console.log(mapped);
+
+// Extract the year from each object: [{ date: "2024-01-11" }, { date: "2023-12-25" }, { date: "2025-06-15" }] - Expected Result: [2024, 2023, 2025]
+array = [
+  { date: "2024-01-11" },
+  { date: "2023-12-25" },
+  { date: "2025-06-15" },
+];
+mapped = array.map((currentValue) => parseInt(currentValue.date.slice(0, 4)));
+// console.log(mapped);
+
+// Multiply each element by its index: [5, 10, 15, 20] - Expected Result: [0, 10, 30, 60]
+array = [5, 10, 15, 20];
+mapped = array.map((currentValue, index) => currentValue * index);
+// console.log(mapped);
+
+// Keep only even numbers: [1, 2, 3, 4, 5, 6, 7, 8] - Expected Result: [2, 4, 6, 8]
+array = [1, 2, 3, 4, 5, 6, 7, 8];
+mapped = array.filter((currentValue) => currentValue % 2 === 0);
+// console.log(mapped);
+
+// Add '%' to numbers above 10: [5, 12, 8, 17, 2, 25] - Expected Result: [5, "12%", 8, "17%", 2, "25%"]
+array = [5, 12, 8, 17, 2, 25];
+mapped = array.map((currentValue) =>
+  currentValue > 10 ? (currentValue = `${currentValue}%`) : currentValue
+);
+// console.log(mapped);
+
+// Join elements with a comma: ["apple", "banana", "orange"] - Expected Result: "apple,banana,orange"
+array = ["apple", "banana", "orange"];
+mapped = array.join(",");
+// console.log(mapped);
+
+// Create "full name" property: [{ firstName: "John", lastName: "Doe" }, { firstName: "Jane", lastName: "Smith" }] -
+// Expected Result: [{ firstName: "John", lastName: "Doe", fullName: "John Doe" }, { firstName: "Jane", lastName: "Smith", fullName: "Jane Smith" }]
+array = [
+  { firstName: "John", lastName: "Doe" },
+  { firstName: "Jane", lastName: "Smith" },
+];
+mapped = array.map((currentValue) =>
+  Object.assign({}, currentValue, {
+    fullName: currentValue.firstName + " " + currentValue.lastName,
+  })
+);
+// console.log(mapped);
+
+// Calculate area of rectangles: [{ width: 5, height: 10 }, { width: 8, height: 3 }] - Expected Result: [50, 24]
+array = [
+  { width: 5, height: 10 },
+  { width: 8, height: 3 },
+];
+mapped = array.map((currentValue) => currentValue.width * currentValue.height);
+// console.log(mapped);
+
+// Get names and ages above 18: [{ name: "Alice", age: 25 }, { name: "Bob", age: 12 }, { name: "Charlie", age: 30 }] - Expected Result: [{ name: "Alice", age: 25 }, { name: "Charlie", age: 30 }]
+array = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 12 },
+  { name: "Charlie", age: 30 },
+];
+var filtered = array.filter((currentValue) => currentValue.age > 18);
+// console.log(mapped);
