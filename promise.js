@@ -1,27 +1,23 @@
-let myPromise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("1st one");
-  }, 2000);
-});
-
-let myPromise2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("2nd one");
-  }, 4000);
-});
-
-myPromise1
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
-
-async function promiseLogging() {
-  console.log("started");
-  let first = await myPromise1;
-  console.log(first);
-  console.log("middle");
-  let second = await myPromise2;
-  console.log("ended");
-  console.log(second);
-}
-
-promiseLogging();
+const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("okeyy");
+    }, 2000);
+  });
+  const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("okeyy2");
+    }, 4000);
+  });
+  
+  async function pResolve() {
+    console.log("Worlddd!!!");
+    const x = await p;
+    console.log("Hellooooo!!!!");
+    console.log(x);
+  
+    const y = await p2;
+    console.log("Hiiii");
+    console.log(y);
+  }
+  
+  pResolve();
