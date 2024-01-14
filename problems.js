@@ -19,4 +19,33 @@ result = array.reverse();
 
 array = [1, 2, 2, 3, 4, 4, 5];
 result = [...new Set(array)];
+// console.log(result);
+
+// Given an object, access a nested property using object destructuring.
+// Example: Input: { person: { name: 'John', age: 30 } }, Output: 'John'
+
+var object = {
+  Input: {
+    person: {
+      name: "John",
+      age: 30,
+    },
+  },
+};
+
+result = Object.keys(object)
 console.log(result);
+
+var {
+  Input: {
+    person: { name },
+  },
+} = object;
+// console.log(name);
+
+// Write a function to check if a specific key exists in an object.
+// Example: Input: { name: 'Alice', age: 25 }, Key: 'age', Output: true
+
+object = { name: "Alice", age: 25 };
+result = Object.keys(object).includes("age")
+// console.log(result);
