@@ -355,12 +355,4 @@ var deepObject = {
   },
 };
 
-function findDeep(params) {
-  
-  for (const key in object) {
-    if (condition) {
-      
-    }
-  }
-}
-
+function findDeep(params) {}
