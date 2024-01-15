@@ -42,7 +42,7 @@ array.splice(1, 2, 0, 0); // deleted 2 elements starting from the index 1 and re
 // console.log(array);
 
 array = [1, 2, 3, 4];
-//both map() and forEach() perform a particular operation on each elenment of an array,
+//both map() and forEach() perform a particular operation on each element of an array,
 // but the map() returns the result as a new array of corresponding elements.
 // and the forEach() did not return as an array, it returns as a list of each result. and it also can't be assigned to a variable.
 var mappedArray = array.map((e) => 2 * e);
@@ -53,7 +53,7 @@ var mappedArray = array.map((e) => 2 * e);
 // console.log(array);
 
 array = ["a", "r", "a", "f", "a", "t", "h"];
-array.sort(); //this makes the array sorted in alphabetical order
+array.sort(); //this makes the array sorted in alphabetical order,and also this method changes the original array
 // console.log(array);
 array.reverse(); // this just reverses the array elements.
 // console.log(array); // here we get the result as the array is sorted in alphabetical descending order. because we have sorted the same array above.

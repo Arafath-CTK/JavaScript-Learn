@@ -144,15 +144,15 @@ let counter1 = createCounter();
 // Example: Input: [3, 1, 5, 2], Output: 5
 
 function maxNumber() {
-  array = Array.from(arguments)
-  return Math.max(...array)
+  array = Array.from(arguments);
+  return Math.max(...array);
 }
 
-var array1 = [3, 1, 5, 2]
-var max1 = maxNumber.call(null, ...array1)
+var array1 = [3, 1, 5, 2];
+var max1 = maxNumber.call(null, ...array1);
 
-var array2 = [3, 1, 5, 2, 9]
-var max2 = maxNumber.apply(null, array2)
+var array2 = [3, 1, 5, 2, 9];
+var max2 = maxNumber.apply(null, array2);
 
 // console.log(max1, max2);
 
@@ -160,12 +160,27 @@ var max2 = maxNumber.apply(null, array2)
 // Example: Create a bound function that always logs 'Hello, World!' with this set to { greeting: 'Hello' }.
 
 var bindModel = {
-  greeting : "Hello"
-}
+  greeting: "Hello",
+};
 
 function greet(name) {
-  return `${this.greeting}, ${name}!`
+  return `${this.greeting}, ${name}!`;
 }
 
-var greet1 = greet.bind(bindModel)
+var greet1 = greet.bind(bindModel);
 // console.log(greet1("John"));
+
+// write a generator function for a counter
+
+function* countNumber() {
+  let count = 1;
+  while (true) {
+    yield count;
+    count++;
+  }
+}
+
+var counter = countNumber();
+// console.log(counter.next().value);
+// console.log(counter.next().value);
+// console.log(counter.next().value);
