@@ -173,6 +173,7 @@ var greet1 = greet.bind(bindModel);
 // write a generator function for a counter
 
 function* countNumber() {
+
   let count = 1;
   while (true) {
     yield count;
